@@ -25,20 +25,29 @@ déficit visuel.
 
 **Version** 1.2
 
-- Le féminin des titres "(x-)promoteur" est désormais pris en compte (promotrice).
-- le cadre dans la table des matières est invisibilisé, les titres restent des liens actifs.
+- Le féminin des titres "(x-)promoteur" est désormais pris en compte
+  (promotrice).
+- le cadre dans la table des matières est invisibilisé, les titres
+  restent des liens actifs.
 
 **Version** 1.3
 
-- Bug "promotrice" corrigé
+- Bug "promotrice" corrigé.
 
 **Version** 1.4
 
-- Bug corrigé: \ifx était interprété différement entre MikTeX et Overleaf pour les promoteurs.
+- Bug corrigé: \ifx était interprété différement entre MikTeX et
+  Overleaf pour les promoteurs.
 
 **Version** 1.5
 
-- Ajout d'un fichier Bibtex
+- Ajout d'un fichier Bibtex.
+
+**Version** 1.6
+
+- Corrections mineures
+- Suppression de l'espace en début de paragraphe. 
+- Ajout de la section avec les considérations esthétiques.
 
 
 

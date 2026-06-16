@@ -12,13 +12,15 @@
 \usepackage{fancyhdr}
 \usepackage{pifont}
 \usepackage{lipsum} % génère du texte aléatoire
+\usepackage{parskip}
 % \usepackage{draftwatermark}
 % \SetWatermarkText{CONFIDENTIEL}
 % \SetWatermarkColor{gray!20}
 % \SetWatermarkFontSize{3cm}
 \usepackage[top=2cm, bottom=2.5cm, left=2cm, right=2cm]{geometry} % marge des pages
 \usepackage{ragged2e} % justifier texte
-\usepackage[french]{babel} 
+\usepackage[english,french]{babel} 
+\usepackage{csquotes}
 \usepackage{microtype} %% pour améliorer la typographie, facultatif.
 
 \usepackage{xcolor}
@@ -90,7 +92,15 @@
   \clearpage
 }
 
+
+\setlength{\parindent}{0pt}
+
+
 \begin{document}
+
+
+\selectlanguage{french} %% pour définir la langue par défaut, cf. les langues mentionnées dans le package babel.
+%\selectlanguage{english} %% pour définir la langue par défaut, cf. les langues mentionnées dans le package babel.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% NE PAS EDITER CE FICHIER
@@ -308,7 +318,8 @@ Il peut être utile pour certains chapitres complexes d'ajouter une
 section \og Synthèse\fg{} qui résume le chapitre et ce qu'il faut en
 retenir pour poursuivre sereinement la lecture des chapitres suivants.
 
-\chapter[Titre long]{Le titre de ce chapitre est délibérément très long afin de montrer comment gérer un titre long}
+\chapter[Titre long]{Le titre de ce chapitre est délibérément très
+  long afin de montrer comment gérer un titre long}
 
 Si un titre est très long (à éviter), il est possible et souhaitable
 de fournir une alternative plus courte, qui sera utilisée pour la
@@ -343,6 +354,60 @@ dans cette partie :
   l'application, … Vous êtes dans une écriture objective, il n'y a
   aucune interprétation personnelle.
 \end{itemize}
+
+\chapter{Considérations esthéthiques}
+
+\paragraph{Langue.} Ce template est configuré par défaut pour la
+langue française. Si votre mémoire est en anglais, songez à éditer la
+ligne avec la commande \texttt{\textbackslash selectlanguage}.
+
+\paragraph{Sauts de ligne.}
+\'Evitez d'utiliser des sauts de lignes dans un paragraphe ou
+d'utiliser un paragraphe par phrase. Un paragraphe est un ensemble de
+phrases réunies par une même unité de pensée.\\ Et on constate ici
+qu'un saut de ligne est bien disgracieux\dots.
+
+\paragraph{Césures.} \LaTeX\ peut parfois éprouver des difficultés pour opérer une césure
+de mots longs. On peut alors l'aider en plaçant des indications de
+césures comme dans \og le mot le plus plus long est
+an\-ti\-cons\-ti\-tu\-tion\-nel\-le\-ment\fg{} qui a été édité comme :
+\texttt{an\textbackslash-ti\textbackslash-cons\textbackslash-ti\textbackslash-tu\textbackslash-tion\textbackslash-nel\textbackslash-le\textbackslash-ment}.
+
+\paragraph{Guillemets} Le package \texttt{babel} pour la langue
+française fournit des commandes \verb+\og+ et \verb+\fg{}+ pour
+produire des guillemets conformes aux règles de typographie française~:
+\og Entre guillemets, \fg{} c'est plus joli que ceci "assurément". Les
+accolades fermantes sont nécessaires après \verb+\fg+ afin d'empêcher
+la commande d'absorber le caractère suivant comme un argument.
+
+Le package \texttt{csquotes} utilise une commande \verb+\enquote+avec argument qui
+produit des guillemets conformes à la langue utilisée. Ainsi, ce code
+\LaTeX :
+\begin{verbatim}
+\setquotestyle{english}
+  This is an \enquote{English} paragraph.
+\setquotestyle{french}
+  Ceci est un paragraphe en \enquote{Français}.    
+\end{verbatim}
+
+produira:
+
+\begin{quote}
+\setquotestyle{english}
+  This is an \enquote{English} paragraph.
+\setquotestyle{french}
+  Ceci est un paragraphe en \enquote{Français}.    
+\end{quote}
+
+Il est toujours possible d'utiliser pour la langue anglaise les
+caractères \verb+``+ (accent grave) et \verb+''+ (quote) qui
+produisent ``entre guillemets''.
+
+Dans tous les cas, l'usage des guillements simples \og \texttt{"}
+\fg{} est à proscrire.
+
+
+
 
 \chapter{Un autre chapitre}
 
